@@ -1,46 +1,77 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CoffeeWidget extends StatelessWidget{
+import '../model/Coffeemodel.dart';
 
-  int? index;
-  String? title;
-  String? description;
-  String? url;
+class CoffeeWidget extends StatelessWidget {
+  CoffeeWidget({required this.coffeeItem, required this.index, super.key});
 
-  CoffeeWidget({required this.index, required this.title, required this. description, required this.url})
+  final CoffeeItem coffeeItem;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-            color: Colors.black,
-            width: 3)
-      ),
-      padding: EdgeInsets.all(10.0),
-      child: Row(
-        children: [
-          Expanded(flex: 1, child: Text("$index", style: TextStyle(fontSize: 24),)),
-          Expanded(flex: 1,
-              child: Image(
-              width: 100,
-              height: 100,
-              image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"))),
-          Expanded(
-            child: Column(
-                mainAxisAlignment : MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+        width: double.infinity,
+        height: 150,
+        decoration: BoxDecoration(
+            color: Colors.white10,
+            border: Border.all(color: Colors.black, width: 2.0)),
+        child: ElevatedButton(
+          onPressed: () => print("네비게이션"),
+          child: Center(
+            child: Row(
               children: [
-                Text("제목 : "),
-                Text("내용 : ")
-            ],
+                SizedBox(
+                  width: 40,
+                  child: Text("$index"),
+                ),
+                SizedBox(
+                  child: Image(
+                      width: 80,
+                      height: 100,
+                      fit: BoxFit.fill,
+                      image: AssetImage(coffeeItem.url.toString())),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("제목 : ${coffeeItem!.title}"),
+                        Text(
+                          "내용 : ${coffeeItem!.description}",
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    )),
+                SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: IconButton(
+                        onPressed: () {
+                          print("좋아요 버튼");
+                        },
+                        icon: const Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        ))),
+                SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: IconButton(
+                        onPressed: () {
+                          print("삭제 버튼");
+                        },
+                        icon: const Icon(
+                          Icons.cancel,
+                          color: Colors.black,
+                        ))),
+              ],
+            ),
           ),
-          Expanded(flex: 1, child: Icon(Icons.favorite, color: Colors.red)),
-          Expanded(flex: 1, child: Icon(Icons.cancel_outlined)),
-        ],
-      ),
-    );
+        ));
   }
 }

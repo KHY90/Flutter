@@ -1,7 +1,7 @@
-class Coffeemodel{
+class CoffeeItem{
   String? title;
   String? description;
   String? url;
 
-  Coffeemodel(this.title, this.description, this.url);
+  CoffeeItem({required this.title,required this.description,required this.url});
 }

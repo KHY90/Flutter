@@ -2,26 +2,19 @@ import 'package:cafe_app/widgets/CoffeeWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../model/Coffeemodel.dart';
+
 class CoffeeScreen extends StatelessWidget{
 
-  List<String> title = [
-    "1번 메뉴",
-    "2번 메뉴",
-    "3번 메뉴",
-    "4번 메뉴",
-    "5번 메뉴",
-    "6번 메뉴",
-    "7번 메뉴",
-  ];
-
-  List<String> description = [
-    "1번 설명",
-    "2번 설명",
-    "3번 설명",
-    "4번 설명",
-    "5번 설명",
-    "6번 설명",
-    "7번 설명",
+  List<CoffeeItem> coffees = [
+    CoffeeItem(title: "1번 커피", description: "1번 설명", url: "assets/image.png"),
+    CoffeeItem(title: "2번 커피", description: "1번 설명", url: "assets/image.png"),
+    CoffeeItem(title: "1번 커피", description: "1번 설명", url: "assets/image.png"),
+    CoffeeItem(title: "2번 커피", description: "1번 설명", url: "assets/image.png"),
+    CoffeeItem(title: "1번 커피", description: "1번 설명", url: "assets/image.png"),
+    CoffeeItem(title: "2번 커피", description: "1번 설명", url: "assets/image.png"),
+    CoffeeItem(title: "1번 커피", description: "1번 설명", url: "assets/image.png"),
+    CoffeeItem(title: "2번 커피", description: "1번 설명", url: "assets/image.png"),
   ];
 
   CoffeeScreen({super.key});
@@ -29,16 +22,16 @@ class CoffeeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar : AppBar(
-        title: const Text("커피가 좋아"),
-        backgroundColor: Colors.blueAccent,
+      appBar: AppBar(
+        title: const Text("Coffee Items"),
+        backgroundColor: Colors.blue,
       ),
       body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-
-        }
-      )
+        itemCount: coffees.length,
+        itemBuilder: (context, index){
+          return CoffeeWidget(coffeeItem: coffees[index], index: index);
+        },
+      ),
     );
   }
 }

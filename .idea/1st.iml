@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/b_laout_widget/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/b_laout_widget/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/b_laout_widget/build" />
+      <excludeFolder url="file://$MODULE_DIR$/c_stateless_widget/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/c_stateless_widget/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/c_stateless_widget/build" />
+      <excludeFolder url="file://$MODULE_DIR$/cafe_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/cafe_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/cafe_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/d_stateful_widget/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/d_stateful_widget/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/d_stateful_widget/build" />
+      <excludeFolder url="file://$MODULE_DIR$/e_navigator_widget/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/e_navigator_widget/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/e_navigator_widget/build" />
+      <excludeFolder url="file://$MODULE_DIR$/pratice/fluterPractice/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/pratice/fluterPractice/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/pratice/fluterPractice/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

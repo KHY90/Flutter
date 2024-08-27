@@ -15,6 +15,4 @@ class CounterViewmodel extends ChangeNotifier{
     notifyListeners();
   }
 
-
-
 }

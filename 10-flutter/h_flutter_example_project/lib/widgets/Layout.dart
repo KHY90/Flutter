@@ -1,54 +1,56 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../views/RootScreen.dart';
-
-// 위젯 폴더에는 재사용이 가능한 애들 위주로 넣을 것
+import 'package:h_flutter_example_project/views/AddCoffeeScreen.dart';
+import 'package:h_flutter_example_project/views/FavoriteCoffeeListScreen.dart';
+import 'package:h_flutter_example_project/views/RootScreen.dart';
 
 class Layout extends StatefulWidget{
-
-  const Layout({super.key});
+  Layout({super.key});
 
   @override
-  _LayoutState createState() => _LayoutState();
+  LayoutState createState() => LayoutState();
 }
 
-class _LayoutState extends State<Layout>{
 
-  int _currentIndex = 0;
+class LayoutState extends State<Layout>{
+  int _currunIndex = 0;
 
-  void _onTapped(int index){
+
+  void _onItemTapped(int index){
     setState(() {
-      _currentIndex = index;
+      _currunIndex = index;
     });
   }
 
   final List<Widget> _pages = [
-    const RootScreen(),
+    const Rootscreen(),
+    FavoriteCoffeeListScreen(),
+    AddCoffeeScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Coffe Cards"),
-      ),
-      body: _pages[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.coffee),
-              label: "favorite"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add),
-              label: "add"),
-        ],
-        currentIndex: _currentIndex,
-        onTap: _onTapped,
-      ),
+      // Scaffold로 변경
+        appBar: AppBar(title: const Text("Coffee Cards")), // AppBar 추가
+        body: _pages[_currunIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: "home"
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.coffee),
+                label: "Favorite"
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.add),
+                label: "main"
+            ),
+          ],
+          currentIndex: _currunIndex,
+          onTap: _onItemTapped,
+        )
     );
   }
 }
